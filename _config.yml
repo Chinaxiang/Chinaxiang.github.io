@@ -11,15 +11,21 @@ keywords: GitHub Pages, Blog, Chinaxiang, 黄彦祥, 开源, 博客
 description: > 
   黄彦祥，90后程序猿一枚，热爱分享，喜欢折腾，乐于探索，勇于挑战自我，对新事物充满热情，广交天下有志之士，共谋IT发展大计。
 baseurl: ""
-url: "http://blog.huangyanxiang.com"
+url: "http://huangyanxiang.com"
 twitter_username: ""
 github_username:  Chinaxiang
 
 minima:
   date_format: "%b %-d, %Y"
 
+timezone: Asia/Shanghai
+
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate
+
+paginate: 2
+paginate_path: "/blog/p:num"
