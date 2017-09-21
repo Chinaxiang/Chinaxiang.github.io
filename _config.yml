@@ -1,18 +1,12 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
+# Welcome to Chinaxiang' personal page!
+lang: zh_CN
 title: 黄彦祥的个人网站
 author: Chinaxiang
 email: forkmail@qq.com
-keywords: GitHub Pages, Blog, Chinaxiang, 黄彦祥, 开源, 博客
 description: > 
   黄彦祥，90后程序猿一枚，热爱分享，喜欢折腾，乐于探索，勇于挑战自我，对新事物充满热情，广交天下有志之士，共谋IT发展大计。
 baseurl: ""
 url: "http://huangyanxiang.com"
-twitter_username: ""
 github_username:  Chinaxiang
 
 minima:
