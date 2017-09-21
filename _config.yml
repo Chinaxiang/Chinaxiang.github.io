@@ -4,43 +4,22 @@
 # which you are expected to set up once and rarely edit after that. If you find
 # yourself editing this file very often, consider using Jekyll's data files
 # feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: 黄彦祥的个人网站
 author: Chinaxiang
 email: forkmail@qq.com
-description: > # this means to ignore newlines until "baseurl:"
-  我志愿加入中国共产党，拥护党的纲领，遵守党的章程，履行党员义务，执行党的决定，严守党的纪律，保守党的秘密，对党忠诚，积极工作，为共产主义奋斗终身，随时准备为党和人民牺牲一切，永不叛党。
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://blog.huangyanxiang.com" # the base hostname & protocol for your site, e.g. http://example.com
+keywords: GitHub Pages, Blog, Chinaxiang, 黄彦祥, 开源, 博客
+description: > 
+  黄彦祥，90后程序猿一枚，热爱分享，喜欢折腾，乐于探索，勇于挑战自我，对新事物充满热情，广交天下有志之士，共谋IT发展大计。
+baseurl: ""
+url: "http://blog.huangyanxiang.com"
 twitter_username: ""
 github_username:  Chinaxiang
 
 minima:
-  date_format: "%a, %b %-d, %Y"
+  date_format: "%b %-d, %Y"
 
-# Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
