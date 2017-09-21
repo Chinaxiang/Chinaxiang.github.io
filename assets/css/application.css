@@ -1,0 +1,346 @@
+/*
+ * Application level styles
+ * (things that dont make sense in a toolkit :)
+ * copyright @Chinaxiang 2016
+ */
+ body {
+  background-color: #fff;
+/* note: this is a hack for ios iframe for bootstrap themes shopify page */
+/* this chunk of css is not part of the toolkit :) */
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
+}
+/* docs overrides */
+.a {
+  background-color: #fff;
+  border-color: #d3e0e9;
+}
+.wordbreak,pre {
+  word-break:break-all;
+}
+/* general overrides */
+.by {
+  position: relative;
+}
+.b .c {
+  line-height: 1.4;
+}
+.d .close {
+  margin-top: 4px;
+}
+a {
+  color: #3097d1;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #216a94;
+  text-decoration: none;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+/* navbar */
+.os{
+  position: relative;
+}
+.app-navbar {
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+.app-navbar .form-control {
+  box-shadow: none;
+}
+.app-navbar .e img {
+  width: 85px;
+}
+.app-navbar .f {
+  max-height: inherit;
+}
+.app-navbar .form-control {
+  border-color: #1C73A5;
+}
+.g {
+  margin-left: -12px;
+  padding-bottom: 10px !important;
+}
+.g .h:before {
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  .app-navbar .f:after {
+  height: auto;
+  }
+}
+/* profile bg height */
+@media (min-width: 480px) {
+  .ans {
+  height: 350px;
+  }
+}
+@media (min-width: 768px) {
+  .ans {
+  height: 450px;
+  }
+  .ans .qh {
+  width: 110px;
+  }
+}
+/*项目样式*/
+#projects .thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 310px;
+  height: 290px;
+  margin-bottom: 30px;
+  border-radius: 0;
+}
+/*相册概览样式*/
+#albums .cont {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 310px;
+  margin-bottom: 30px;
+  border-radius: 0;
+  border: 2px solid #EDEDEF;
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+}
+#albums .cont:hover, #albums .cont:focus {
+  border: 2px solid #789fff;
+}
+.cont .txt, .cont .foter {
+  color: #aaa;
+  width: 246px;
+  margin: 5px auto;
+  padding-left: 5px;
+}
+.cont .txt h4 {
+ color: #1e3948;
+}
+.cont .list {
+  position: relative;
+  width: 246px;
+  height: 165px;
+  margin: 5px auto;
+  border: 1px solid #fff;
+}
+.cont .list .ibox {
+  position: relative;
+  display: block;
+  width: 244px;
+  height: 163px;
+  text-decoration: none;
+}
+.cont .list .ipwd {
+  display: none;
+}
+.icover, .ilock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #000;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: .3s;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+}
+.icover .glyphicon-share-alt, .ilock .glyphicon-lock {
+  font-size: 3em;
+  position: relative;
+  top: 61px;
+  left: 101px;
+}
+.list a:hover .icover {
+  opacity: .4;
+  filter: alpha(opacity=40);
+}
+.list a:hover .ilock {
+  opacity: .4;
+  filter: alpha(opacity=40);
+}
+.cont .list .item {
+  float: left;
+  display: inline-block;
+  margin: 1px 0 0 1px;
+}
+.txt .feed_quote .ui_ico {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  font-size: 0;
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+}
+.txt .feed_quote {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.txt .feed_quote .quote_before {
+  vertical-align: top;
+  background-image: url(../img/timeline-jan140928124407.png);
+  background-position: -986px -85px;
+  margin-right: 5px;
+}
+.txt .feed_quote .quote_after {
+  vertical-align: bottom;
+  background-image: url(../img/timeline-jan140928124407.png);
+  background-position: -986px -102px;
+  margin-left: 5px;
+}
+/* 相册页面样式 */
+.bw {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #3097d1;
+  background-image: linear-gradient(to bottom, #216a94, #3097d1);
+}
+.bw h1 {
+  margin-bottom: 5px;
+  font-size: 50px;
+  line-height: 1;
+}
+.bw p {
+  font-weight: 300;
+  line-height: 1.4;
+  color: #add6ed;
+}
+@media (min-width: 768px) {
+  .bw {
+  font-size: 24px;
+  }
+  .bw h1 {
+  font-size: 40px;
+  }
+}
+@media (min-width: 1260px) {
+  .bw h1,
+  .bw p {
+  max-width: 75%;
+  }
+  .bw h1 {
+  font-size: 50px;
+  }
+}
+/*相册样式处理*/
+#images .gallery-item {
+  position: relative;
+  float: left;
+  border: 1px solid #fff;
+}
+@media (min-width: 1260px) {
+  .gallery-item {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (min-width: 992px) {
+  .gallery-item {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (min-width: 768px) {
+  .gallery-item {
+    width: 240px;
+    height: 240px;
+  }
+}
+@media (max-width: 767px) {
+  .gallery-item {
+    display: block;
+    width: 100%;
+    height: 310px;
+    margin: 0 auto;
+  }
+}
+#tietus .thumbnail{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 310px;
+  height: 220px;
+  margin-bottom: 30px;
+  border-radius: 0;
+}
+/*关于我引用样式*/
+#about blockquote {
+  color: #777;
+  font-size: 14px;
+}
+#knowlege ul {padding-left: 20px;}
+#knowlege ul li {line-height: 2em;}
+/*相册上传样式*/
+#container {
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 15px 0;
+  background-color: #fafafa;
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+}
+#container:after {
+  content:"图片上传";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.box {
+  margin: 20px;
+  padding: 15px;
+  border: 3px dashed #e6e6e6;
+}
+.draging .box {
+  border: 3px dashed #999;
+}
+.placeholder {
+  min-height: 280px;
+  padding-top: 144px;
+  text-align: center;
+  background: url(/Public/assets/img/image.png) center 53px no-repeat;
+  color: #cccccc;
+  font-size: 18px;
+  position: relative;
+}
+/* misc */
+.j {
+  max-width: 280px;
+  margin-top: -60px;
+}
+.k {
+  margin-right: 10px;
+}
+.l {
+  width: 40%;
+  display: inline-block;
+}
+.l img {
+  width: 100%;
+}

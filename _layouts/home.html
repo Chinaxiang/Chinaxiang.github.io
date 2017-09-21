@@ -1,29 +1,176 @@
 ---
 layout: default
 ---
-
-<div class="home">
-
-  {{ content }}
-
-  <h1 class="page-heading">This is Home page.</h1>
-  
-
-  <hr>
-  <h1>下面是所有的文章列表</h1>
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
+<div class="ans dj" style="background-image: url({{ "/assets/img/iceland.jpg" | relative_url }}">
+  <div class="by">
+    <div class="ant">
+      <img class="cu qh" src="{{ "/assets/img/faster.png" | relative_url }}">
+      <h3 class="anv">Chinaxiang</h3>
+      <p class="anu">
+        {{ content }}
+        {{ site.description }}
+      </p>
+    </div>
+  </div>
+  <nav class="anw">
+    <ul class="nav ol">
+      <li class="active">
+        <a href="#projects" aria-controls="projects" role="tab" data-toggle="tab">项目</a>
       </li>
-    {% endfor %}
-  </ul>
+      <li>
+        <a href="#links" aria-controls="links" role="tab" data-toggle="tab">超链</a>
+      </li>
+      <li>
+        <a href="#about" aria-controls="about" role="tab" data-toggle="tab">关于我</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+<div class="by alx tab-content">
+  <div class="row tab-pane fade in active" id="projects" role="tabpanel">
+    <div class="col-md-12">
+      <h2 class="text-center">创建或搜罗的优秀项目</h2>
+      <p class="text-center">这些项目或是自己开发，或是克隆以备用，或是直接提供外链访问，没事多看看</p>
+      <hr>
+    </div>
 
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+      <div class="thumbnail">
+        <a href="http://www.bootcdn.cn/" title="Bootstrap中文网开放CDN服务" target="_blank"><img class="lazy" src="http://static.bootcss.com/www/assets/img/opencdn.png" width="300" height="150" alt="Open CDN"></a>
+        <div class="caption">
+          <h3>
+            <a href="http://www.bootcdn.cn/" title="Bootstrap中文网开放CDN服务" target="_blank">Open CDN</a>
+          </h3>
+          <p>Bootstrap中文网联合又拍云存储共同推出的开放CDN服务，例如Bootstrap、jQuery等。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+      <div class="thumbnail">
+        <a href="http://www.jquery123.com/api/" title="jQuery API 中文文档/手册" target="_blank"><img class="lazy" src="http://static.bootcss.com/www/assets/img/jqueryapi.png" width="300" height="150" alt="jQuery API 中文文档/手册"></a>
+        <div class="caption">
+          <h3> 
+            <a href="http://www.jquery123.com/api/" title="jQuery API 中文文档/手册" target="_blank">jQuery 中文手册</a>
+          </h3>
+          <p>
+          根据最新的 jQuery 1.11.x 和 2.1.x 版本翻译的 jQuery API 中文文档/手册。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+      <div class="thumbnail">
+        <a href="/project/git-guide/index.html" title="Git简易指南" target="_blank"><img class="lazy" src="http://static.bootcss.com/www/assets/img/git-guide.png" width="300" height="150" alt="Git Guide"></a>
+        <div class="caption">
+          <h3> 
+            <a href="/project/git-guide/index.html" title="git简易指南" target="_blank">Git 简易指南</a>
+          </h3>
+          <p>
+          Git 简易指南 -- 帮助你开始使用 git 的简易指南，木有高深内容，;)。
+          </p>
+        </div>
+      </div>
+    </div> 
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+      <div class="thumbnail">
+        <a href="/project/icheck-1.x/index.html" title="iCheck" target="_blank"><img class="lazy" src="http://static.bootcss.com/www/assets/img/icheck.png" width="300" height="150" alt="iCheck"></a>
+        <div class="caption">
+          <h3>
+            <a href="/project/icheck-1.x/index.html" title="iCheck" target="_blank">iCheck 增强选框</a>
+          </h3>
+          <p>
+          iCheck让不同浏览器下的复选框（checkboxes）和单选按钮（radio button）更美观、功能更强。
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+      <div class="thumbnail">
+        <a href="/project/grumblejs/index.html" title="气泡形状的提示（Tooltip）控件" target="_blank"><img class="lazy" src="http://static.bootcss.com/www/assets/img/grumblejs.png" width="300" height="150"></a>
+        <div class="caption">
+          <h3>
+            <a href="/p/grumblejs/index.html" title="气泡形状的提示（Tooltip）控件" target="_blank">Grumble.js</a>
+          </h3>
+          <p>
+          一个气泡形状的提示（Tooltip）控件，可以在其围绕的元素周围做360度任意定位。
+          </p>
+      </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 ">
+      <div class="thumbnail">
+        <a href="/project/websafecolors/index.html" title="Web安全色" target="_blank"><img class="lazy" src="http://static.bootcss.com/www/assets/img/websafecolors.png" width="300" height="150"></a>
+        <div class="caption">
+          <h3>
+            <a href="/p/websafecolors/index.html" title="Web安全色" target="_blank">Web安全色</a>
+          </h3>
+          <p>
+          本表中列出的是WEB设计、开发中常用安全色。列于此是为了方便大家参考。
+          </p>
+        </div>
+      </div>
+    </div>
+    
+  
+  </div>
+  <div class="row tab-pane fade" id="links" role="tabpanel">
+    <div class="col-md-12">
+      <h1>还没有外链哟。</h1>
+    </div>
+  </div>
+  <div class="row tab-pane fade" id="about" role="tabpanel">
+    <div class="col-md-12">
+      <div class="me-header pull-left"><img class="img-thumbnail" src="data:image/png;base64,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" alt="头像"></div>
+      <div class="me-info pull-left" style="height: 90px;overflow: hidden;padding-left: 15px;">
+        <h4>黄彦祥 &middot; 90后</h4>
+        <p style="color: #999;"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp;&nbsp;<a href="http://hpu.edu.cn" target="_blank">河南理工大学</a><br><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;me#huangyanxiang.com</p>
+      </div>
+      <div class="clearfix"></div>
+      <hr>
+      <a class="col-md-12 btn btn-success hidden printl" href="javascript:alert('此功能纯属摆设！');">打印简历 <span class="glyphicon glyphicon-print" aria-hidden="true"></span></a>
+    </div>
+    <div class="col-md-12">
+      <h5><span class="glyphicon glyphicon-console" aria-hidden="true"></span>&nbsp;&nbsp;个人简介</h5>
+      <p style="line-height: 2em;" class="well">
+        90后程序猿一枚，毕业于一所NB的挖煤大学，学了一门全能的计算机科学与技术专业，胸怀大志，有匡扶正义，振兴中华之心。<br>
+        一直以来，坚持“三个代表”重要思想，时刻铭记“八荣八耻”社会主义核心价值观，准备随时为共产主义事业加油呐喊。<br>
+        关注时事热点，搜集科技快讯，参与娱乐八卦，珍藏高清种子，分享喜怒哀乐，让每一天都充实而快乐。<br>
+      </p>
+      <h5><span class="glyphicon glyphicon-console" aria-hidden="true"></span>&nbsp;&nbsp;求职意向<a class="btn unlock" href="javascript:;"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a></h5>
+      <div id="wantjob">
+        <p style="line-height: 2em;">
+          <span style="color: #999;">此部分为加密数据，请解锁查看。</span>
+        </p>
+      </div>
+      <h5><span class="glyphicon glyphicon-console" aria-hidden="true"></span>&nbsp;&nbsp;职业技能<a class="btn unlock" href="javascript:;"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a></h5>
+      <div id="knowlege">
+        <p style="line-height: 2em;">
+          <span style="color: #999;">此部分为加密数据，请解锁查看。</span>
+        </p>
+      </div>
+      <h5><span class="glyphicon glyphicon-console" aria-hidden="true"></span>&nbsp;&nbsp;工作历程<a class="btn unlock" href="javascript:;"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a></h5>
+      <div id="work">
+        <p style="line-height: 2em;">
+          <span style="color: #999;">此部分为加密数据，请解锁查看。</span>
+        </p>
+      </div>
+      <h5><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;&nbsp;大家这样评价他</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <blockquote>
+            <p>A very smart and lovely boy, has a lot of magic ideas, you would like him.</p>
+            <footer>Steven Jobs</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-6">
+          <blockquote class="blockquote-reverse">
+            <p>家长眼里的好孩子，老师眼里的好学生，朋友眼里的好伙伴，领导眼里的好员工。</p>
+            <footer>小明</footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
