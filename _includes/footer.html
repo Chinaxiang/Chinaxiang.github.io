@@ -1,33 +1,17 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
+<footer class="footer">
+  <div class="by alx">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        <div class="headline">
+          <h3>{{ site.title | escape }}</h3>
+        </div>
+        <p>{{ site.description | escape }}</p>
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
             {% include icon-github.html username=site.github_username %}
           </li>
           {% endif %}
-
           {% if site.twitter_username %}
           <li>
             {% include icon-twitter.html username=site.twitter_username %}
@@ -35,12 +19,45 @@
           {% endif %}
         </ul>
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
+      <div class="col-md-8 col-sm-6">
+        <div class="headline">
+          <h3>关注我</h3>
+        </div>
+        <ul class="social-media-list">
+          <li>
+          <img class="img-resonsive" width="128" height="128" src="{{ "/assets/img/qrcode_for_gh_4f52ad10979d_258.jpg" }}">
+          </li>
+          <li>
+          <img class="img-resonsive" width="128" height="128" src="{{ "/assets/img/gh_1ff26c3a1b60_344.jpg" }}">
+          </li>
+        </ul>
       </div>
     </div>
-
   </div>
-
 </footer>
+<div class="copyright">
+    <div class="by alx">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>
+                  <a href="#">富强</a>&nbsp;|&nbsp;
+                  <a href="#">民主</a>&nbsp;|&nbsp;
+                  <a href="#">文明</a>&nbsp;|&nbsp;
+                  <a href="#">和谐</a>&nbsp;|&nbsp;
+                  <a href="#">自由</a>&nbsp;|&nbsp;
+                  <a href="#">平等</a>&nbsp;|&nbsp;
+                  <a href="#">公正</a>&nbsp;|&nbsp;
+                  <a href="#">法制</a>&nbsp;|&nbsp;
+                  <a href="#">爱国</a>&nbsp;|&nbsp;
+                  <a href="#">敬业</a>&nbsp;|&nbsp;
+                  <a href="#">诚信</a>&nbsp;|&nbsp;
+                  <a href="#">友善</a>
+              </p>
+              <p>© 2017 黄彦祥 - <a href="http://www.miitbeian.gov.cn/" target="_blank">豫ICP备14013048号-2</a> 
+                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1264491401'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264491401%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+              </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ "/assets/js/application.js" | relative_url }}"></script>

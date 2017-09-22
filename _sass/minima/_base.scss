@@ -61,14 +61,6 @@ figcaption {
 }
 
 
-
-/**
- * Lists
- */
-ul, ol {
-  margin-left: $spacing-unit;
-}
-
 li {
   > ul,
   > ol {
@@ -94,20 +86,22 @@ a {
   color: $brand-color;
   text-decoration: none;
 
+  /*
   &:visited {
     color: darken($brand-color, 15%);
   }
+  */
 
   &:hover {
     color: $text-color;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   .social-media-list &:hover {
     text-decoration: none;
 
     .username {
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }
@@ -127,23 +121,6 @@ blockquote {
   > :last-child {
     margin-bottom: 0;
   }
-}
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-  @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #eef;
-}
-
-code {
-  padding: 1px 5px;
 }
 
 pre {

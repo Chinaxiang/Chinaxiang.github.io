@@ -8,6 +8,7 @@ description: >
 baseurl: ""
 url: "http://huangyanxiang.com"
 github_username:  Chinaxiang
+twitter_username: ""
 
 minima:
   date_format: "%b %-d, %Y"

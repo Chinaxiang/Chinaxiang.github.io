@@ -1,0 +1,51 @@
+<div class="segheader">
+  <script src='//w.segmentfault.com/card/1030000000320218.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=333333&btn=009a61&noBtn=0'></script>
+</div>
+<div class="category" id="tagContainer">
+  <div class="menus text-center">
+    <canvas id="tagCanvas" width="250" height="250"></canvas>
+    <div id="tags" style="display: none;">
+    {%for tag in site.data.tags %}
+    <a href="{{ tag.url }}">{{ tag.name }}</a>
+    {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="weiboheader hidden-xs">
+  <iframe width="100%" height="570" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=570&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=2474281537&verifier=a014606d&dpc=1"></iframe>
+</div>
+<script type="text/javascript" src="/assets/js/tagcanvas.min.js"></script>
+<script type="text/javascript">
+try {
+  TagCanvas.Start('tagCanvas', 'tags', {
+    textColour: '#222',
+    outlineColour: '#aaa',
+    reverse: true,
+    depth: 0.8,
+    dragControl: true,
+    decel:0.95,
+    maxSpeed: 0.05,
+    initial: [-0.2, 0]
+  });
+} catch (e) {
+  // something went wrong, hide the canvas container
+  $('#tagContainer').hide();
+}
+</script><script type="text/javascript" src="/assets/js/tagcanvas.min.js"></script>
+<script type="text/javascript">
+try {
+  TagCanvas.Start('tagCanvas', 'tags', {
+    textColour: '#222',
+    outlineColour: '#aaa',
+    reverse: true,
+    depth: 0.8,
+    dragControl: true,
+    decel:0.95,
+    maxSpeed: 0.05,
+    initial: [-0.2, 0]
+  });
+} catch (e) {
+  // something went wrong, hide the canvas container
+  $('#tagContainer').hide();
+}
+</script>
