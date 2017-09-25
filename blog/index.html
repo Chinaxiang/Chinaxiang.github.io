@@ -2,7 +2,6 @@
 layout: default
 title: 博客列表
 ---
-<link href="{{ "/assets/css/blog.css" | relative_url }}" rel="stylesheet">
 <div class="bw">
   <div class="by">
     <h1>个人博客</h1>
@@ -13,7 +12,7 @@ title: 博客列表
   <div class="row">
     <div class="col-md-9 col-sm-8">
       <div class="stream-list blog-stream">
-        {% assign posts = paginator.posts | sort: 'date' %}
+        {% assign posts = paginator.posts | sort: 'date' | reverse %}
         {% for post in posts %}
         <section class="stream-list__item">
           <div class="blog-rank">

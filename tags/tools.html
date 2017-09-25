@@ -13,7 +13,7 @@ permalink: /tag/tools
   <div class="row">
     <div class="col-md-9 col-sm-8">
       <div class="stream-list blog-stream">
-        {% assign posts = site.tags.tool | sort: 'date' %}
+        {% assign posts = site.tags.tool | sort: 'date' | reverse %}
         {% for post in posts %}
         <section class="stream-list__item">
           <div class="blog-rank">
