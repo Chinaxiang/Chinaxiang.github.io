@@ -13,7 +13,8 @@ title: 博客列表
   <div class="row">
     <div class="col-md-9 col-sm-8">
       <div class="stream-list blog-stream">
-        {% for post in paginator.posts %}
+        {% assign posts = paginator.posts | sort: 'date' %}
+        {% for post in posts %}
         <section class="stream-list__item">
           <div class="blog-rank">
             <div class="votes plus">

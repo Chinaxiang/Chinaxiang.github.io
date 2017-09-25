@@ -394,10 +394,8 @@ title: Blogging Like a Hacker
 
 本文先介绍这么多，避免单篇文章过长，休息片刻，稍后补充如下内容：
 
-{% comment %}
-- [Jekyll With Liquid]({% post_url 2017-09-20-jekyll-with-liquid %})
-- [Jekyll With Useful Plugins]({% post_url 2017-09-20-jekyll-with-useful-plugins %})
-{% endcomment %}
+- [Jekyll With Liquid]({{ "/2017/09/20/jekyll-with-liquid.html" | relative_url }})
+- [Jekyll With Useful Plugins]({{ "/2017/09/20/jekyll-with-useful-plugins.html" | relative_url }})
 
 [jekyll-docs]: http://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll

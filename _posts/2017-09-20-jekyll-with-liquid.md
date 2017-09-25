@@ -22,6 +22,7 @@ Liquid可以分为objects, tags, and filters.
 
 获取页面的标题:
 
+{% raw %}
 ```
 {{ page.title }}
 ```
@@ -259,8 +260,451 @@ Liquid中无法单独定义出数组，不过你可以使用filter处理得到�
   </tbody>
 </table>
 
-> 未完待续
+## Tags
+
+Tags你可以理解为Liquid的关键词，如条件判断if, 循环语句for, Tag是 `{%` 和 `%}` 包裹起来的。
+
+### 注释
+
+注释是不会被Liquid引擎处理的。Liquid的注释既可以作用于单行，又可以作用于多行。
+
+```
+{% comment %} line comment {% endcomment %}
+{% comment %}
+block comment
+{% endcomment %}
+```
+
+### 条件流程控制
+
+直接看例子吧。
+
+```
+{% if product.title == 'Awesome Shoes' %}
+  These shoes are awesome!
+{% endif %}
+
+{% unless product.title == 'Awesome Shoes' %}
+  These shoes are not awesome.
+{% endunless %}
+
+equals
+
+{% if product.title != 'Awesome Shoes' %}
+  These shoes are not awesome.
+{% endif %}
+
+{% if customer.name == 'kevin' %}
+  Hey Kevin!
+{% elsif customer.name == 'anonymous' %}
+  Hey Anonymous!
+{% else %}
+  Hi Stranger!
+{% endif %}
+
+{% assign handle = 'cake' %}
+{% case handle %}
+  {% when 'cake' %}
+     This is a cake
+  {% when 'cookie' %}
+     This is a cookie
+  {% else %}
+     This is not a cake nor a cookie
+{% endcase %}
+```
+
+### 循环遍历
+
+```
+{% for i in (1..5) %}
+  {% if i == 4 %}
+    {% break %}
+  {% else %}
+    {{ i }}
+  {% endif %}
+{% endfor %}
+
+{% for i in (1..5) %}
+  {% if i == 4 %}
+    {% continue %}
+  {% else %}
+    {{ i }}
+  {% endif %}
+{% endfor %}
+
+limit
+
+<!-- if array = [1,2,3,4,5,6] -->
+{% for item in array limit:2 %}
+  {{ item }}
+{% endfor %}
+
+1 2
+
+offset
+
+<!-- if array = [1,2,3,4,5,6] -->
+{% for item in array offset:2 %}
+  {{ item }}
+{% endfor %}
+
+3 4 5 6
+
+range
+
+{% for i in (3..5) %}
+  {{ i }}
+{% endfor %}
+
+{% assign num = 4 %}
+{% for i in (1..num) %}
+  {{ i }}
+{% endfor %}
+
+3 4 5
+1 2 3 4
+
+reversed
+
+<!-- if array = [1,2,3,4,5,6] -->
+{% for item in array reversed %}
+  {{ item }}
+{% endfor %}
+
+6 5 4 3 2 1
+```
+
+cycle, 周期循环的意思。
+
+```
+{% cycle 'one', 'two', 'three' %}
+{% cycle 'one', 'two', 'three' %}
+{% cycle 'one', 'two', 'three' %}
+{% cycle 'one', 'two', 'three' %}
+
+one
+two
+three
+one
+
+```
+
+tablerow, 快速构建表格的行。
+
+```
+<table>
+{% tablerow product in collection.products %}
+  {{ product.title }}
+{% endtablerow %}
+</table>
+
+<table>
+  <tr class="row1">
+    <td class="col1">
+      Cool Shirt
+    </td>
+    <td class="col2">
+      Alien Poster
+    </td>
+    <td class="col3">
+      Batman Poster
+    </td>
+    <td class="col4">
+      Bullseye Shirt
+    </td>
+    <td class="col5">
+      Another Classic Vinyl
+    </td>
+    <td class="col6">
+      Awesome Jeans
+    </td>
+  </tr>
+</table>
+
+{% tablerow product in collection.products cols:2 %}
+  {{ product.title }}
+{% endtablerow %}
+
+<table>
+  <tr class="row1">
+    <td class="col1">
+      Cool Shirt
+    </td>
+    <td class="col2">
+      Alien Poster
+    </td>
+  </tr>
+  <tr class="row2">
+    <td class="col1">
+      Batman Poster
+    </td>
+    <td class="col2">
+      Bullseye Shirt
+    </td>
+  </tr>
+  <tr class="row3">
+    <td class="col1">
+      Another Classic Vinyl
+    </td>
+    <td class="col2">
+      Awesome Jeans
+    </td>
+  </tr>
+</table>
+
+{% tablerow product in collection.products cols:2 limit:3 %}
+  {{ product.title }}
+{% endtablerow %}
+
+{% tablerow product in collection.products cols:2 offset:3 %}
+  {{ product.title }}
+{% endtablerow %}
+
+<!--variable number example-->
+
+{% assign num = 4 %}
+<table>
+{% tablerow i in (1..num) %}
+  {{ i }}
+{% endtablerow %}
+</table>
+
+<!--literal number example-->
+
+<table>
+{% tablerow i in (3..5) %}
+  {{ i }}
+{% endtablerow %}
+</table>
+```
+
+### 变量
+
+Liquid, 支持变量的定义和计算。
+
+```
+assign
+
+{% assign my_variable = false %}
+{% if my_variable != true %}
+  This statement is valid.
+{% endif %}
+
+{% assign foo = "bar" %}
+{{ foo }}
+
+capture
+
+{% capture my_variable %}I am being captured.{% endcapture %}
+{{ my_variable }}
+
+I am being captured.
+
+{% assign favorite_food = 'pizza' %}
+{% assign age = 35 %}
+
+{% capture about_me %}
+I am {{ age }} and my favorite food is {{ favorite_food }}.
+{% endcapture %}
+
+{{ about_me }}
+
+I am 35 and my favourite food is pizza.
+
+Creates a new number variable, and increases its value by one every time it is called. 
+The initial value is 0.
+
+{% increment my_counter %}
+{% increment my_counter %}
+{% increment my_counter %}
+
+0
+1
+2
+
+Variables created through the increment tag are independent from variables created through assign or capture.
+
+{% assign var = 10 %}
+{% increment var %}
+{% increment var %}
+{% increment var %}
+{{ var }}
+
+0
+1
+2
+10
+
+{% decrement variable %}
+{% decrement variable %}
+{% decrement variable %}
+
+-1
+-2
+-3
+```
+
+## Filters
+
+Liquid提供了一些常用的过滤器（方法）。
+
+### abs
+
+```
+{{ -17 | abs }}
+17
+
+{{ "-19.86" | abs }}
+19.86
+```
+
+### append, prepend
+
+```
+{% assign filename = "/index.html" %}
+{{ "website.com" | append: filename }}
+website.com/index.html
+```
+
+### capitalize
+
+首字母大写。
+
+```
+{{ "title" | capitalize }}
+Title
+{{ "my great title" | capitalize }}
+My great title
+```
+
+### date
+
+```
+{{ article.published_at | date: "%a, %b %d, %y" }}
+Fri, Jul 17, 15
+{{ article.published_at | date: "%Y" }}
+2015
+{{ "March 14, 2016" | date: "%b %d, %y" }}
+Mar 14, 16
+
+To get the current time, pass the special word "now" (or "today") to date:
+This page was last updated at {{ "now" | date: "%Y-%m-%d %H:%M" }}.
+This page was last updated at 2017-06-29 14:45.
+```
+
+### default
+
+```
+{{ product_price | default: 2.99 }}
+2.99
+{% assign product_price = 4.99 %}
+{{ product_price | default: 2.99 }}
+4.99
+{% assign product_price = "" %}
+{{ product_price | default: 2.99 }}
+2.99
+```
+
+### lstrip, rstrip, strip
+
+去除句子首部的空白字符。
+
+```
+{{ "          So much room for activities!          " | lstrip }}
+So much room for activities!          
+```
+
+去除句子尾部的空白字符。
+
+```
+{{ "          So much room for activities!          " | rstrip }}
+          So much room for activities!
+```
+
+去除首尾的空白字符。
+
+```
+{{ "          So much room for activities!          " | strip }}
+So much room for activities!
+```
+
+### plus, minus, times, divided_by
+
+加，减，乘，除运算。
+
+```
+{{ 16 | divided_by: 4 }}
+4
+{{ 5 | divided_by: 3 }}
+1
+{{ 20 | divided_by: 7.0 }}
+2.857142857142857
+{% assign my_integer = 7 %}
+{% assign my_float = my_integer | times: 1.0 %}
+{{ 20 | divided_by: my_float }}
+2.857142857142857
+```
+
+### remove, remove_first
+
+```
+{{ "I strained to see the train through the rain" | remove: "rain" }}
+I sted to see the t through the 
+{{ "I strained to see the train through the rain" | remove_first: "rain" }}
+I sted to see the train through the rain
+```
+
+### replace, replace_first
+
+```
+{{ "Take my protein pills and put my helmet on" | replace: "my", "your" }}
+Take your protein pills and put your helmet on
+{% assign my_string = "Take my protein pills and put my helmet on" %}
+{{ my_string | replace_first: "my", "your" }}
+Take your protein pills and put my helmet on
+```
+
+### slice
+
+Returns a substring of 1 character beginning at the index specified by the argument passed in. An optional second argument specifies the length of the substring to be returned.
+
+截取指定长度的字符串，第二个表示长度，第一个表示索引，从0开始，如果为负数，从后面往前数，从-1开始。
+
+```
+{{ "Liquid" | slice: 0 }}
+L
+{{ "Liquid" | slice: 2 }}
+q
+{{ "Liquid" | slice: 2, 5 }}
+quid
+{{ "Liquid" | slice: -3, 2 }}
+ui
+```
+
+### split
+
+Divides an input string into an array using the argument as a separator. split is commonly used to convert comma-separated items from a string to an array.
+
+分割字符串组成一个数组。
+
+```
+{% assign beatles = "John, Paul, George, Ringo" | split: ", " %}
+
+{% for member in beatles %}
+  {{ member }}
+{% endfor %}
 
 
+  John
 
+  Paul
+
+  George
+
+  Ringo
+```
+
+当然这里没有列举完所有的filter, 这些是相对比较常用的，记着这些，如果满足不了需求，再去官方文档上翻阅翻阅。
+
+{% endraw %}
 
