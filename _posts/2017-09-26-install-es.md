@@ -7,6 +7,8 @@ date: 2017-09-26 16:39:00 +800
 
 在上文对ES有了大概认识后，我们就该实操一下了，ES的安装非常简单。
 
+{% raw %}
+
 Elasticsearch 是用JAVA开发的，所以需要安装最新版被JAVA运行环境。
 
 本文测试环境以Centos 6.5 x64为基础，不同的系统安装整体步骤是大差不差的。
@@ -265,3 +267,5 @@ curl 'http://localhost:9200/_cluster/health?pretty'
 `elasticsearch.yml` 中还可以配置数据的存储目录，日志的存储目录，插件的存储目录就不再赘述了。
 
 下一篇文章会介绍插件的安装。
+
+{% endraw %}
