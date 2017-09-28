@@ -182,7 +182,7 @@
 .article img {
   max-width: 100%;
 }
-.article ul {
+.article ul, .article ol {
   padding-left: 20px;
 }
 /*博客代码部分*/

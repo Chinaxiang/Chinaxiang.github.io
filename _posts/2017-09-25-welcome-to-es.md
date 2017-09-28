@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ES 简介
+title: Elasticsearch 简介
 tags: search
 date: 2017-09-25 17:00:00 +800
 ---
@@ -271,6 +271,8 @@ analyzer 对于 analyzed 字符串域，用 analyzer 属性指定在搜索和索
 > Elasticsearch uses standard RESTful APIs and JSON. We also build and maintain clients in many languages such as Java, Python, .NET, and Groovy. Plus, our community has contributed many more. They’re easy to work with, feel natural to use, and, just like Elasticsearch, don't limit what you might want to do with them.
 
 简言之，ES支持与多种语言进行交互。
+
+如下内容摘自官网，没有实践。
 
 ### curl
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ES 安装
+title: Elasticsearch 安装
 tags: search
 date: 2017-09-26 16:39:00 +800
 ---
@@ -264,8 +264,56 @@ curl 'http://localhost:9200/_cluster/health?pretty'
 
 ![](http://qcdn.huangyanxiang.com/blog/screenshot_20170926183651.png)
 
-`elasticsearch.yml` 中还可以配置数据的存储目录，日志的存储目录，插件的存储目录就不再赘述了。
+`elasticsearch.yml` 中还可以配置数据的存储目录，日志的存储目录，插件的存储目录，就不再赘述了。
 
-下一篇文章会介绍插件的安装。
+## 安装head插件
+
+head 是集群管理工具、数据可视化、增删改查工具。
+
+- [GitHub 项目地址](https://github.com/mobz/elasticsearch-head)
+- [帮助指南](http://mobz.github.io/elasticsearch-head/)
+
+安装比较简单。
+
+### 命令安装
+
+上面我启动了3个实例，现在我将master上的两个实例全部关闭，把head装到master机器上。
+
+```
+bin/plugin install mobz/elasticsearch-head
+-> Installing mobz/elasticsearch-head...
+Trying https://github.com/mobz/elasticsearch-head/archive/master.zip ...
+Downloading ..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................DONE
+Verifying https://github.com/mobz/elasticsearch-head/archive/master.zip checksums if available ...
+NOTE: Unable to verify checksum for downloaded plugin (unable to find .sha1 or .md5 file to verify)
+Installed head into /home/es/elasticsearch-2.4.4/plugins/head
+ll plugins
+total 4
+drwxrwxr-x. 6 es es 4096 Jun  9 10:18 head
+重新启动master上的es
+bin/elasticsearch
+```
+
+浏览器访问：`http://192.168.163.128:9200/_plugin/head/`
+
+![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927100534.png)
+
+大家会发现只有一个`node-master`节点，因为我把master的两个实例都关了，现在的es master是slave1, 而master的节点没有配置单播通知host, 所以master就是一个节点的集群。配置一下，再次启动。
+
+![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927101321.png)
+
+带有星号的是es master节点。
+
+### 包安装
+
+ES的插件都放置在`plugins`目录下，如上面的`plugins/head/`目录，你可以直接下载github上的head包，将其放置到head目录下即可。
+
+这其实和试用`bin/plugin install`命令是相同的。
+
+另外还有一种方式就是将head项目作为独立的web服务，其实这个也很好理解，head项目就是一个静态页面，它所请求的数据都是通过调用es提供的API接口完成的，你可以直接打开项目的index.html, 它会发出一系列Ajax请求到`localhost:9200`, 如果你能解决跨域问题，当然是可以作为独立web服务存在的，或者后面你对es的API非常熟悉了，你自己也可以构建一个head项目（不就是请求一下接口，包装一下数据，展示一下嘛）。
+
+因为该插件可以对数据进行，增删改查。故生产环境尽量不要使用，如果要使用，最少要限制IP地址。尽量不要使用。
+
+目前，我们的集群数据仍然是空的，接下来，我们会逐步让数据丰富起来。
 
 {% endraw %}
