@@ -142,9 +142,9 @@ curl 'http://localhost:9200/website/blog/123?pretty'
   "_version" : 1,
   "found" : true,
   "_source" : {
-  "title" : "My first blog entry",
-  "text" : "Just trying this out...",
-  "date" : "2014/01/01"
+    "title" : "My first blog entry",
+    "text" : "Just trying this out...",
+    "date" : "2014/01/01"
   }
 }
 ```
@@ -167,35 +167,35 @@ curl -XGET 'http://localhost:9200/megacorp'
   "aliases": {},
   "mappings": {
   "employee": {
-  "properties": {
-  "about": {
-  "type": "string"
-  },
-  "age": {
-  "type": "long"
-  },
-  "first_name": {
-  "type": "string"
-  },
-  "interests": {
-  "type": "string"
-  },
-  "last_name": {
-  "type": "string"
-  }
-  }
-  }
+    "properties": {
+      "about": {
+          "type": "string"
+        },
+        "age": {
+          "type": "long"
+        },
+        "first_name": {
+          "type": "string"
+        },
+        "interests": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        }
+      }
+    }
   },
   "settings": {
-  "index": {
-  "creation_date": "1493501236848",
-  "number_of_shards": "5",
-  "number_of_replicas": "1",
-  "uuid": "bUOXe5jmRyahFH9lN2365g",
-  "version": {
-  "created": "2040499"
-  }
-  }
+    "index": {
+      "creation_date": "1493501236848",
+      "number_of_shards": "5",
+      "number_of_replicas": "1",
+      "uuid": "bUOXe5jmRyahFH9lN2365g",
+      "version": {
+        "created": "2040499"
+      }
+    }
   },
   "warmers": {}
   }
