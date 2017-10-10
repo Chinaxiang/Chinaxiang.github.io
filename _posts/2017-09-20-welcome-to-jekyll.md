@@ -134,6 +134,8 @@ Configuration file: none
 
 那么Jekyll定义的目录都是用来干嘛的呢？
 
+{% raw %}
+
 <table>
 <thead>
 <tr>
@@ -269,6 +271,8 @@ Markdown, Textile files</p>
 </tr>
 </tbody>
 </table>
+
+{% endraw %}
 
 ## 配置
 
