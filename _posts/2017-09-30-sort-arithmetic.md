@@ -146,6 +146,46 @@ public class Bubble {
 }
 ```
 
+### 改进
+
+对冒泡排序常见的改进方法是加入一标志性变量exchange，用于标志某一趟排序过程中是否有数据交换，如果进行某一趟排序时并没有进行数据交换，则说明数据已经按要求排列好，可立即结束排序，避免不必要的比较过程。
+
+设置一标志性变量pos,用于记录每趟排序中最后一次进行交换的位置。由于pos位置之后的记录均已交换到位，故在进行下一趟排序时只要扫描到pos位置即可。
+
+```java
+public static int[] sort(int[] array) {
+    int temp;
+    int time = 1;
+    for (int i = array.length - 1; i > 0;) {
+        System.out.println("第" + time + "轮开始");
+        int pos = 0;
+        // 第二层循环，每相邻的两个比较一次，次数随着轮数的增加不断减少，每轮确定一个最大的，不需比较那个最大的
+        for (int j = 0; j < i; j++) {
+            System.out.println("第" + time + "轮，第" + (j + 1) + "次比较：");
+            if (array[j + 1] < array[j]) {
+                pos = j;
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+            }
+            for (int k : array) {
+                System.out.print(k + " ");
+            }
+            System.out.println();
+        }
+        i = pos;
+        time++;
+        System.out.println("结果：");
+        for (int k : array) {
+            System.out.print(k + " ");
+        }
+        System.out.println();
+    }
+    return array;
+}
+```
+
+
 ## 快速排序
 
 快速排序，通过一趟排序将待排记录分割成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，然后分别对这两部分记录继续进行排序,以达到整个序列有序的目的。
@@ -559,6 +599,48 @@ public class SimpleSelect {
         }
     }
 
+}
+```
+
+### 改进
+
+简单选择排序，每趟循环只能确定一个元素排序后的定位。我们可以考虑改进为每趟循环确定两个元素（当前趟最大和最小记录）的位置,从而减少排序所需的循环次数。
+
+```java
+public static int[] sortPlus(int[] array) {
+    int minPosition, maxPosition;
+    for (int i = 0; i <= array.length / 2; i++) {
+        System.out.println("第" + (i + 1) + "轮比较结果：");
+        minPosition = i;
+        maxPosition = i;
+        // 找出i之后的数组中的最小和最大索引
+        for (int j = i + 1; j < array.length - i; j++) {
+            if (array[j] < array[minPosition]) {
+                minPosition = j;
+            }
+            if (array[j] > array[maxPosition]) {
+                maxPosition = j;
+            }
+        }
+        // 判断是否需要调换位置
+        if (array[i] > array[minPosition]) {
+            int temp = array[i];
+            array[i] = array[minPosition];
+            array[minPosition] = temp;
+        }
+        // 判断是否需要调换位置
+        if (array[array.length - 1 - i] < array[maxPosition]) {
+            int temp = array[array.length - 1 - i];
+            array[array.length - 1 - i] = array[maxPosition];
+            array[maxPosition] = temp;
+        }
+        // 输出此轮排序结果
+        for (int k : array) {
+            System.out.print(k + " ");
+        }
+        System.out.println();
+    }
+    return array;
 }
 ```
 
