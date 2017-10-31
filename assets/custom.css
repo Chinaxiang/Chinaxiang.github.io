@@ -187,7 +187,6 @@
 }
 /*博客代码部分*/
 .highlight {
-  max-height: 500px;
   overflow: auto;
 }
 .zero-clipboard {

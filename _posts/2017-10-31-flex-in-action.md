@@ -7,7 +7,7 @@ date: 2017-10-31 08:25:00 +800
 
 最近应朋友邀请帮其制作一款简单的小程序，翻看了一些小程序教程，发现使用flex非常适合做小程序布局，遂简单学习一下。
 
-文章摘自 [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) 和 [Flex 布局教程：实例篇](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)。 搜集下来是为了备忘，自己查找更方便。
+文章摘自 [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) 。 搜集下来是为了备忘，自己查找更方便。
 
 网页布局（layout）是 CSS 的一个重点应用。
 

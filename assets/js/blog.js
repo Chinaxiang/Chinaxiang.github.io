@@ -76,9 +76,9 @@ $(function() {
     ZeroClipboard.destroy();
   });
   $(window).load(function(){
-    $(".highlight").mCustomScrollbar({
-      theme: "dark"
-    });
+    // $(".highlight").mCustomScrollbar({
+    //   theme: "dark"
+    // });
   });
 
   /*hljs.initHighlightingOnLoad();*/
