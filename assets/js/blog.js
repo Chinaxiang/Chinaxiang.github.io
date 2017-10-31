@@ -54,7 +54,7 @@ $(function() {
     moviePath: "//cdn.bootcss.com/zeroclipboard/2.1.6/ZeroClipboard.swf",
     hoverClass: "btn-clipboard-hover"
   });
-  $(".highlight").each(function() {
+  $("pre.highlight").each(function() {
     var b = '<div class="zero-clipboard hidden-sm hidden-xs"><span class="btn-clipboard">复制</span></div>';
     $(this).before(b);
   });
