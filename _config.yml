@@ -16,7 +16,7 @@ minima:
 timezone: Asia/Shanghai
 
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
