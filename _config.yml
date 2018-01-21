@@ -22,5 +22,5 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
 
-paginate: 3
+paginate: 15
 paginate_path: "/blog/p:num"
