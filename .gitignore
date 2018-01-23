@@ -5,5 +5,4 @@ _site
 _site
 *.gem
 Gemfile.lock
-
 .DS_Store
