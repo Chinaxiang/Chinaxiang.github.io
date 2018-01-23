@@ -4,5 +4,6 @@ _site
 .bundle
 _site
 *.gem
+Gemfile.lock
 
 .DS_Store
