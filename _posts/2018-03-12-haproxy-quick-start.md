@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HAProxy快速入门
+title: HAProxy快速入门（未完待续）
 tags: tool
 date: 2018-03-12 21:25:00 +800
 ---
@@ -247,7 +247,7 @@ haproxy.cfg主要有两部分组成：global和proxies配置段
 
 ### 一个例子
 
-我们已经安装了HAProxy, 但HAProxy不是web服务器，所以我们再安装一个nginx配合测试。
+我们已经安装了HAProxy, 但HAProxy不是web服务器，所以我们再安装一个nginx配合测试（其他文章会再介绍nginx的）。
 
 ```
 # apt-get install nginx
@@ -324,8 +324,18 @@ listen http-in
     server server1 127.0.0.1:80 maxconn 32
 ```
 
+### 引用与转义
 
-未完待续
+### 变量
+
+### 时间格式
+
+### 全局配置
+
+### 代理配置
+
+
+
 
 ## 参考资料
 
