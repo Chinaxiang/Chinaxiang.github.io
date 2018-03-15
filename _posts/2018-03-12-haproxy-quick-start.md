@@ -5,8 +5,6 @@ tags: tool
 date: 2018-03-12 21:25:00 +800
 ---
 
-## HAProxy简介
-
 HAProxy是一个使用C语言编写的自由及开放源代码软件，其提供高可用性、负载均衡，以及基于TCP和HTTP的应用程序代理。
 
 HAProxy功能
@@ -326,13 +324,165 @@ listen http-in
 
 ### 引用与转义
 
+在配置haproxy时如果需要用到特殊字符，如#, 则需使用转义，转义符号（\）.
+
+haproxy有两种引用：弱引用，双引号括起来的引用，里面可以使用转义符号，强引用，单引号括起来的引用，里面不可以使用转义字符。
+
+空格在haproxy配置中作为分隔符，如果确实需要输入空格作为字符串，则需要转义`\ `.
+
+`#`是注释, 如果需要输入#同样需要转义`\#`.
+
+弱引用中可以使用`$`符号获取变量的值，强引用中`$`符号作为字符串使用。
+
+```
+# 下面的这样是等价的
+log-format %{+Q}o\ %t\ %s\ %{-Q}r
+log-format "%{+Q}o %t %s %{-Q}r"
+log-format '%{+Q}o %t %s %{-Q}r'
+log-format "%{+Q}o %t"' %s %{-Q}r'
+log-format "%{+Q}o %t"' %s'\ %{-Q}r
+
+# 下面的这些也是等价的
+reqrep "^([^\ :]*)\ /static/(.*)"     \1\ /\2
+reqrep "^([^ :]*)\ /static/(.*)"     '\1 /\2'
+reqrep "^([^ :]*)\ /static/(.*)"     "\1 /\2"
+reqrep "^([^ :]*)\ /static/(.*)"     "\1\ /\2"
+```
+
 ### 变量
+
+haproxy配置可以使用变量，变量只能在双引号中通过$符号取值。
+
+```
+bind "fd@${FD_APP1}"
+
+log "${LOCAL_SYSLOG}:514" local0 notice   # send to local server
+
+user "$HAPROXY_USER"
+```
 
 ### 时间格式
 
+时间在haproxy中默认是毫秒，当然也可以自己指定时间单位。
+
+- us : microseconds. 1 microsecond = 1/1000000 second
+- ms : milliseconds. 1 millisecond = 1/1000 second. This is the default.
+- s  : seconds. 1s = 1000ms
+- m  : minutes. 1m = 60s = 60000ms
+- h  : hours.   1h = 60m = 3600s = 3600000ms
+- d  : days.    1d = 24h = 1440m = 86400s = 86400000ms
+
 ### 全局配置
 
+全局配置一般是系统配置，一般配置一次几乎都不需要改变的，有些配置可以通过命令行去覆盖。
+
+具体见：http://cbonte.github.io/haproxy-dconv/1.6/configuration.html#3
+
+> 过程管理和安全
+
+- ca-base 
+- chroot
+- crt-base
+- cpu-map
+- daemon
+- description
+- deviceatlas-json-file
+- deviceatlas-log-level
+- deviceatlas-separator
+- deviceatlas-properties-cookie
+- external-check
+- gid
+- group
+- log
+- log-tag
+- log-send-hostname
+- lua-load
+- nbproc
+- node
+- pidfile
+- uid
+- ulimit-n
+- user
+- stats
+- ssl-default-bind-ciphers
+- ssl-default-bind-options
+- ssl-default-server-ciphers
+- ssl-default-server-options
+- ssl-dh-param-file
+- ssl-server-verify
+- unix-bind
+- 51degrees-data-file
+- 51degrees-property-name-list
+- 51degrees-property-separator
+- 51degrees-cache-size
+
+> 性能优化
+
+- max-spread-checks
+- maxconn
+- maxconnrate
+- maxcomprate
+- maxcompcpuusage
+- maxpipes
+- maxsessrate
+- maxsslconn
+- maxsslrate
+- maxzlibmem
+- noepoll
+- nokqueue
+- nopoll
+- nosplice
+- nogetaddrinfo
+- noreuseport
+- spread-checks
+- server-state-base
+- server-state-file
+- tune.buffers.limit
+- tune.buffers.reserve
+- tune.bufsize
+- tune.chksize
+- tune.comp.maxlevel
+- tune.http.cookielen
+- tune.http.maxhdr
+- tune.idletimer
+- tune.lua.forced-yield
+- tune.lua.maxmem
+- tune.lua.session-timeout
+- tune.lua.task-timeout
+- tune.lua.service-timeout
+- tune.maxaccept
+- tune.maxpollevents
+- tune.maxrewrite
+- tune.pattern.cache-size
+- tune.pipesize
+- tune.rcvbuf.client
+- tune.rcvbuf.server
+- tune.sndbuf.client
+- tune.sndbuf.server
+- tune.ssl.cachesize
+- tune.ssl.lifetime
+- tune.ssl.force-private-cache
+- tune.ssl.maxrecord
+- tune.ssl.default-dh-param
+- tune.ssl.ssl-ctx-cache-size
+- tune.vars.global-max-size
+- tune.vars.reqres-max-size
+- tune.vars.sess-max-size
+- tune.vars.txn-max-size
+- tune.zlib.memlevel
+- tune.zlib.windowsize
+
+> 调试
+
+- debug
+- quiet
+
 ### 代理配置
+
+- defaults [<name>]
+- frontend <name>
+- backend  <name>
+- listen   <name>
 
 
 
