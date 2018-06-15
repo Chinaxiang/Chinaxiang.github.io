@@ -1,0 +1,43 @@
+---
+layout: default
+title: ELK - 博客
+permalink: /tag/elk
+---
+<div class="bw">
+  <div class="by">
+    <h1>ELK</h1>
+    <p>ElasticSearch, Logstash, Kibana, Beats。</p>
+  </div>
+</div>
+<div class="by alx">
+  <div class="row">
+    <div class="col-md-9 col-sm-8">
+      <div class="stream-list blog-stream">
+        {% assign posts = site.tags.elk | sort: 'date' | reverse %}
+        {% for post in posts %}
+        <section class="stream-list__item">
+          <div class="blog-rank">
+            <div class="votes plus">
+              10<small>推荐</small>
+            </div>
+            <div class="views hidden-xs">
+              100<small>浏览</small>
+            </div>
+          </div>
+          <div class="summary">
+            <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="excerpt wordbreak hidden-xs">{{ post.excerpt | remove: '<p>' | remove: '</p>'  }}</p>
+            <ul class="author list-inline">
+              <li>{{ post.date | date: site.minima.date_format }}</li>
+            </ul>
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-4">
+      {% include segment.html %}
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
