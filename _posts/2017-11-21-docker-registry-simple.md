@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker Registry简单使用
-tags: tool
+tags: tool docker devops
 date: 2017-11-21 09:25:00 +800
 ---
 
