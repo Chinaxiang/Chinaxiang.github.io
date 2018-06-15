@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ubuntu开机自启管理
-tags: tool
+tags: tool linux
 date: 2018-02-22 09:25:00 +800
 ---
 

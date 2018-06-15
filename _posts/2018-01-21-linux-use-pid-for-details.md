@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux通过PID查看进程完整信息
-tags: tool
+tags: tool linux
 date: 2018-01-21 09:25:00 +800
 ---
 
