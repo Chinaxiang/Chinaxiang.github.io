@@ -12,7 +12,7 @@ $(document).on("blur", '[data-action="grow"]', function() {
 }),
 // 滚动到页面顶部
 $(function() {
-  var scrollTop = $('<a href="javascript:;" class="scroll-top" style="display: none;position: fixed;bottom: 10px;right: 10px;z-index: 999;"><img src="https://o0y5cx8y8.qnssl.com/top.png"></a>');
+  var scrollTop = $('<a href="javascript:;" class="scroll-top" style="display: none;position: fixed;bottom: 10px;right: 10px;z-index: 999;"><img src="http://qcdn.xinlijinrong.com/top.png"></a>');
   $('body').append(scrollTop);
   function o() {
     $(window).scrollTop() > $(window).height() ? $(".scroll-top").fadeIn() : $(".scroll-top").fadeOut()

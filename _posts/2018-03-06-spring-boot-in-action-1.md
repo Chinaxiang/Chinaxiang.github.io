@@ -5,8 +5,6 @@ tags: spring
 date: 2018-03-06 09:06:00 +800
 ---
 
-## 简介
-
 Spring 官方网站本身使用Spring 框架开发，随着功能以及业务逻辑的日益复杂，应用伴随着大量的XML配置文件以及复杂的Bean依赖关系。 
 
 随着Spring 3.0的发布，Spring IO团队逐渐开始摆脱XML配置文件，并且在开发过程中大量使用“约定优先配置”（convention over configuration）的思想来摆脱Spring框架中各种复杂的配置，衍生了Java Config。
