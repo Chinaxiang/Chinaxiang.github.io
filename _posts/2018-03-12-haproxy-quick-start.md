@@ -71,45 +71,7 @@ http: nginx(http, ngx_http_upstream_module), haproxy(mode http), httpd, ats, per
 
 ```
 # apt search haproxy
-Sorting... Done
-Full Text Search... Done
-haproxy/xenial-updates,xenial-security 1.6.3-1ubuntu0.1 amd64
-  fast and reliable load balancing reverse proxy
-...
-
 # apt-get install haproxy
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-The following additional packages will be installed:
-  liblua5.3-0
-Suggested packages:
-  vim-haproxy haproxy-doc
-The following NEW packages will be installed:
-  haproxy liblua5.3-0
-0 upgraded, 2 newly installed, 0 to remove and 4 not upgraded.
-Need to get 872 kB of archives.
-After this operation, 1,997 kB of additional disk space will be used.
-Do you want to continue? [Y/n] y
-Get:1 http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial/main amd64 liblua5.3-0 amd64 5.3.1-1ubuntu2 [116 kB]
-Get:2 http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-updates/main amd64 haproxy amd64 1.6.3-1ubuntu0.1 [756 kB]
-Fetched 872 kB in 0s (1,734 kB/s)
-Selecting previously unselected package liblua5.3-0:amd64.
-(Reading database ... 59387 files and directories currently installed.)
-Preparing to unpack .../liblua5.3-0_5.3.1-1ubuntu2_amd64.deb ...
-Unpacking liblua5.3-0:amd64 (5.3.1-1ubuntu2) ...
-Selecting previously unselected package haproxy.
-Preparing to unpack .../haproxy_1.6.3-1ubuntu0.1_amd64.deb ...
-Unpacking haproxy (1.6.3-1ubuntu0.1) ...
-Processing triggers for libc-bin (2.23-0ubuntu10) ...
-Processing triggers for systemd (229-4ubuntu21.1) ...
-Processing triggers for ureadahead (0.100.0-19) ...
-Processing triggers for man-db (2.7.5-1) ...
-Setting up liblua5.3-0:amd64 (5.3.1-1ubuntu2) ...
-Setting up haproxy (1.6.3-1ubuntu0.1) ...
-Processing triggers for libc-bin (2.23-0ubuntu10) ...
-Processing triggers for systemd (229-4ubuntu21.1) ...
-Processing triggers for ureadahead (0.100.0-19) ...
 ```
 
 HAproxy组成
@@ -249,20 +211,6 @@ haproxy.cfg主要有两部分组成：global和proxies配置段
 
 ```
 # apt-get install nginx
-Reading package lists... Done
-Building dependency tree       
-Reading state information... Done
-The following additional packages will be installed:
-  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libtiff5 libvpx3 libxpm4 libxslt1.1 nginx-common nginx-core
-Suggested packages:
-  libgd-tools fcgiwrap nginx-doc ssl-cert
-The following NEW packages will be installed:
-  fontconfig-config fonts-dejavu-core libfontconfig1 libgd3 libjbig0 libjpeg-turbo8 libjpeg8 libtiff5 libvpx3 libxpm4 libxslt1.1 nginx nginx-common nginx-core
-0 upgraded, 14 newly installed, 0 to remove and 4 not upgraded.
-Need to get 3,000 kB of archives.
-After this operation, 9,783 kB of additional disk space will be used.
-Do you want to continue? [Y/n] y
-...
 ```
 
 安装完成，访问一下：http://192.168.111.11/ （根据你自己的机器IP更改）
