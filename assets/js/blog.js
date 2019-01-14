@@ -102,5 +102,5 @@ $(function() {
     // });
   });
 
-  /*hljs.initHighlightingOnLoad();*/
+  hljs.initHighlightingOnLoad();
 });
