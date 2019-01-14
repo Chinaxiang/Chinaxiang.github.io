@@ -50,16 +50,37 @@ $(function() {
   //$("pre").find("code").parent().addClass('highlight');
   $(".article img").addClass('img-responsive');
   var b = $(window),c = $(document.body);
-  ZeroClipboard.config({
+  /*ZeroClipboard.config({
     moviePath: "//cdn.bootcss.com/zeroclipboard/2.1.6/ZeroClipboard.swf",
     hoverClass: "btn-clipboard-hover"
-  });
+  });*/
   $("pre.highlight").each(function() {
-    var b = '<div class="zero-clipboard hidden-sm hidden-xs"><span class="btn-clipboard">复制</span></div>';
+    //var b = '<div class="zero-clipboard hidden-sm hidden-xs"><span class="btn-clipboard">复制</span></div>';
+    var b = '<div class="clipboard hidden-sm hidden-xs" title="复制剪贴板"><span class="btn-clipboard">复制</span></div>';
+    $(b).tooltip("fixTitle");
     $(this).before(b);
   });
+
+  var clipboard = new ClipboardJS('.clipboard', {
+      text: function(trigger) {
+        return $(trigger).parent().find('.highlight').text();
+      }
+    });
+
+  clipboard.on('success', function(e) {
+    /*console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);*/
+    $(e.trigger).attr("title", "复制成功！").tooltip("fixTitle").tooltip("show").attr("title", "复制剪贴板").tooltip("fixTitle");
+    e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+  });
  
-  var d = new ZeroClipboard($(".btn-clipboard"));
+  /*var d = new ZeroClipboard($(".btn-clipboard"));
   var e = $("#global-zeroclipboard-html-bridge");
   d.on("ready",function() {
     e.data("placement", "top").attr("title", "复制到剪贴板").tooltip(),
@@ -74,7 +95,7 @@ $(function() {
   d.on("noflash wrongflash",function() {
     $(".zero-clipboard").remove();
     ZeroClipboard.destroy();
-  });
+  });*/
   $(window).load(function(){
     // $(".highlight").mCustomScrollbar({
     //   theme: "dark"

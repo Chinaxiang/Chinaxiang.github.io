@@ -189,7 +189,7 @@
 .highlight {
   overflow: auto;
 }
-.zero-clipboard {
+.clipboard {
   position: relative;
   display: none;
 }
@@ -208,14 +208,14 @@
   border-radius: 0 4px 0 4px;
 }
 
-.btn-clipboard-hover {
+.btn-clipboard:hover {
   color: #fff;
   background-color: #563d7c;
   border-color: #563d7c;
 }
 
 @media (min-width:768px) {
-  .zero-clipboard {
+  .clipboard {
     display: block;
     position: absolute;
     width: 50px;
