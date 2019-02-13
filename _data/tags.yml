@@ -21,6 +21,3 @@
 
 - url: /tag/search
   name: 搜索
-
-- url: /tag/elk
-  name: ELK
