@@ -254,9 +254,9 @@
   margin-top:5px
 }
 .widget-outline .panel-body ul {
-  padding-left:18px;
+  padding-left:12px;
   margin:0;
-  list-style-type:square
+  list-style-type:none
 }
 .widget-outline {
   position: relative;
