@@ -14,7 +14,13 @@ $(function(){
           a = void 0,
           e = void 0,
           o = void 0,
-          i > r.data("top") + 20 ? i + r.height() + parseFloat($(".nav-body").css("top").replace(/px/, "")) < $("footer").offset().top ? r.removeClass("absolute").addClass("fixed").width(r.data("width")).css("top", 0) : r.removeClass("fixed").addClass("absolute").css("top", r.parents(".row").height() - r.height()) : r.removeClass("fixed").css("width", "100%"),
+          i > r.data("top") + 20 
+          ? i + r.height() + 
+            parseFloat($(".nav-body").css("top").replace(/px/, "")) < $("footer").offset().top 
+            ? r.removeClass("absolute").addClass("fixed").width(r.data("width")).css("top", 0) 
+            : r.removeClass("fixed").addClass("absolute").css("top", r.parents(".row").height() - r.height()) 
+          : r.removeClass("fixed").css("width", "100%"),
+          
           t.eq(0).offset().top < i ? (n.show(), t.each(function(s, l) {
               return e = r.find("[href=#" + $(this).attr("id") + "]"),
               o = t.last().offset().top - i,
@@ -69,12 +75,6 @@ $(function() {
   clipboard.on('error', function(e) {
     console.error('Action:', e.action);
     console.error('Trigger:', e.trigger);
-  });
- 
-  $(window).load(function(){
-    // $(".highlight").mCustomScrollbar({
-    //   theme: "dark"
-    // });
   });
 
   hljs.initHighlightingOnLoad();

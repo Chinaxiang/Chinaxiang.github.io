@@ -190,7 +190,7 @@
   overflow: auto;
 }
 .article pre {
-  padding: 5px;
+  padding: 0px;
 }
 .clipboard {
   position: relative;

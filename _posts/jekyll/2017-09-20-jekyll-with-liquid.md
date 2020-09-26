@@ -121,12 +121,12 @@ Liquid包含如下操作符：
 另外还有一个操作符：`contains`, 它可以判断字符串的包含，还可以判断数组中的字符串包含关系（如果数组中是非字符串的，是不能判断出来的）。
 
 ```
-{% if product.title contains 'Pack' %}
-  This product's title contains the word Pack.
+{% if product.title contains "Pack" %}
+  This title of product contains the word Pack.
 {% endif %}
 
-{% if product.tags contains 'Hello' %}
-  This product has been tagged with 'Hello'.
+{% if product.tags contains "Hello" %}
+  This product has been tagged with Hello.
 {% endif %}
 ```
 
