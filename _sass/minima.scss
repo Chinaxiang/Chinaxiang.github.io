@@ -15,8 +15,8 @@ $background-color: #fdfdfd !default;
 $brand-color:      #2a7ae2 !default;
 
 $grey-color:       #828282 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+// $grey-color-light: lighten($grey-color, 40%) !default;
+// $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
@@ -36,9 +36,130 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
+/**
+ * Reset some basic elements
+ */
+ body, h1, h2, h3, h4, h5, h6,
+ p, blockquote, pre, hr,
+ dl, dd, ol, ul, figure {
+   margin: 0;
+   padding: 0;
+ }
+
+
+/**
+ * Images
+ */
+ img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  /*
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+  */
+
+  &:hover {
+    color: $text-color;
+    text-decoration: none;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: none;
+    }
+  }
+}
+
+
+/**
+ * Clearfix
+ */
+ %clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/**
+ * Icons
+ */
+.icon > svg {
+  display: inline-block;
+  vertical-align: middle;
+
+  path {
+    fill: $grey-color;
+  }
+}
+
+.social-media-list {
+  .icon {
+    padding-right: 5px;
+  }
+
+  li + li {
+    padding-top: 5px;
+  }
+}
+
+/**
+ * Site header
+ */
+ .contact-list,
+ .social-media-list {
+   list-style: none;
+   margin-left: 0;
+ }
+
 // Import partials.
 @import
-  "minima/base",
-  "minima/layout",
+  // "minima/base",
+  // "minima/layout",
   "minima/syntax-highlighting"
 ;

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HAProxy快速入门（未完待续）
+title: HAProxy快速入门
 tags: tool
 date: 2018-03-12 21:25:00 +800
 ---

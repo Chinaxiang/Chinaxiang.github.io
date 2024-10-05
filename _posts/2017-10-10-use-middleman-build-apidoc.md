@@ -13,7 +13,7 @@ date: 2017-10-10 17:25:00 +800
 
 本项目只是一个示例，你可以Fork & Clone使用。
 
-项目GitHub Page地址：http://huangyanxiang.com/middleman
+项目GitHub Page地址：https://huangyanxiang.com/middleman
 
 本项目有两个分支，master 和 gh-pages. master分支用来写源文件并构建gh-pages所需的静态资源，gh-pages仅仅用来存放middleman构建出来的静态资源供用户访问。
 

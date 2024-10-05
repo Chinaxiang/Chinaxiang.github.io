@@ -37,6 +37,7 @@ $(function(){
     };
 
   $(".article").find("h2, h3, h4").length && ($(".post-nav").show(), w(), 0 === $(".articleIndex li").length && $(".widget-outline").remove());
+  
   // 对文章进行赞操作
   var lock = false;
   $("body").on("click", "#sideLike", function(){
@@ -54,7 +55,9 @@ $(function(){
 $(function() {
   "use strict";
   $(".article img").addClass('img-responsive');
+
   var b = $(window),c = $(document.body);
+
   $("pre.highlight").each(function() {
     var b = '<div class="clipboard hidden-sm hidden-xs" title="复制剪贴板"><span class="btn-clipboard">复制</span></div>';
     $(b).tooltip("fixTitle");

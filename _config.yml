@@ -1,14 +1,33 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
 # Welcome to Chinaxiang' personal page!
 lang: zh_CN
 title: 黄彦祥的个人网站
 author: Chinaxiang
 email: forkmail@qq.com
-description: > 
-  黄彦祥，90后程序猿一枚，热爱分享，喜欢折腾，乐于探索，勇于挑战自我，对新事物充满热情，广交天下有志之士，共谋IT发展大计。
+description: >- 
+  软件开发专家，10 年互联网从业经验，具备全栈开发技能，擅长 SRE，云计算，另外正在探索 AI + 新媒体 实现副业赚钱养家之路，欢迎微信撩我：hyx2011
 baseurl: ""
-url: "http://huangyanxiang.com"
+url: "https://huangyanxiang.com"
 github_username:  Chinaxiang
-twitter_username: ""
 
 minima:
   date_format: "%b %-d, %Y"
@@ -19,8 +38,30 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-seo-tag
 
 paginate: 15
 paginate_path: "/blog/p:num"
+
+
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
