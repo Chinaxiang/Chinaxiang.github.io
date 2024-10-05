@@ -1,6 +1,6 @@
 # Chinaxiang's Blog
 
-> 使用 GitHub Pages 构建的博客系统，使用了默认的主题 [minima](https://jekyll.github.io/minima/) 并重构了样式。
+> 使用 GitHub Pages 构建的博客系统。
 
 GitHub Pages 是免费的静态资源托管服务，依托GitHub提供高效，稳定，安全的用户体验，因此借助巨人的肩膀让自己看得更远。
 
@@ -49,7 +49,7 @@ Jekyll 需要 Ruby 环境。
 
 我这里是使用的 rbenv 安装的 ruby 环境，使用起来还不错，这篇博文中有介绍：
 
-[重新捡起我的个人站点，使用 Jekyll 快速构建个人网站](.)
+[重新捡起我的个人站点，使用 Jekyll 快速构建个人网站](https://huangyanxiang.com/jekyll/tools/2024/10/05/%E6%8D%A1%E8%B5%B7%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AB%99%E7%82%B9-%E4%BD%BF%E7%94%A8GitHub%E6%9E%84%E5%BB%BA%E5%85%8D%E8%B4%B9%E7%9A%84%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99.html)
 
 以下内容是安装完了 ruby 和 jekyll 之后执行的指令：
 
