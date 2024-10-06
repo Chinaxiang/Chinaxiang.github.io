@@ -1,3 +1,4 @@
+// 顶部搜索框自动加长
 $(document).on("focus", '[data-action="grow"]', function() {
   $(window).width() > 1e3 && $(this).animate({
     width: 300
@@ -26,10 +27,17 @@ $(function() {
 });
 
 $(function(){
-  // 查看个人简历时的口令输入
-  // var lock = true;
+  // 公众号弹框
   $("body").on("click", ".unlock", function(){
     $('#myModal').modal('show')
+  });
+  // AI 破局弹框
+  $("body").on("click", ".ai-club", function(){
+    $('#aiModal').modal('show')
+  });
+  // 玩赚新媒弹框
+  $("body").on("click", ".new-media", function(){
+    $('#mediaModal').modal('show')
   });
 });
 

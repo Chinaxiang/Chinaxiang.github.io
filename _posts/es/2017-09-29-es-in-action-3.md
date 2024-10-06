@@ -25,7 +25,7 @@ Elasticsearch中的数据可以大致分为两种类型：确切值 和 全文�
 - 一个针对 "jump"  的查询同时能够匹配 "jumped"  ，  "jumps"  ，  "jumping"  甚至 "leap"
 - "johnny walker"  也能匹配 "Johnnie Walker"  ，  "johnnie depp"  及 "Johnny Depp"
 - "fox news hunting"  能返回有关hunting on Fox News的故事，而 "fox hunting news"  也能返回关于fox hunting的新闻故
-事。
+  事。
 
 为了方便在全文文本字段中进行这些类型的查询，Elasticsearch首先对文本分析(analyzes)，然后使用结果建立一个倒排索
 引。
@@ -42,11 +42,11 @@ Elasticsearch使用一种叫做倒排索引(inverted index)的结构来做快速
 
 为了创建倒排索引，我们首先切分每个文档的 content  字段为单独的单词。把所有的唯一词放入列表并排序，结果是这个样子的：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170929100237.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170929100237.png)
 
 现在，如果我们想搜索 "quick brown"  ，我们只需要找到每个词在哪个文档中出现既可：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170929100357.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170929100357.png)
 
 两个文档都匹配，但是第一个比第二个有更多的匹配项。 如果我们加入简单的相似度算法(similarity algorithm)，计算匹配
 单词的数目，这样我们就可以说第一个文档比第二个匹配度更高。
@@ -63,7 +63,7 @@ Elasticsearch使用一种叫做倒排索引(inverted index)的结构来做快速
 2. "foxes"  可以被转为根形式 ""fox  。同理 "dogs"  可以被转为 "dog"  。
 3. "jumped"  和 "leap"  同义就可以只索引为单个词 "jump"
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170929101101.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170929101101.png)
 
 这个标准化的过程叫做分词(analysis).
 
@@ -237,12 +237,12 @@ analyze  API 对于理解Elasticsearch索引的内在细节是个非常有用的
 
 Elasticsearch支持以下简单字段类型：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170929105246.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170929105246.png)
 
 当你索引一个包含新字段的文档——一个之前没有的字段——Elasticsearch将使用动态映射猜测字段类型，这类型来自于
 JSON的基本数据类型，使用以下规则：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170929105408.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170929105408.png)
 
 如果你索引一个带引号的数字—— "123"  ，它将被映射为 "string"  类型，而不是 "long"  类型。然而，如果
 字段已经被映射为 "long"  类型，Elasticsearch将尝试转换字符串为long，并在转换失败时会抛出异常。
@@ -251,7 +251,7 @@ JSON的基本数据类型，使用以下规则：
 
 我们知道类型的字段有三个重要的属性，type, index 和 analyzer. type就不用说了，index再赘述一点：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170929110037.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170929110037.png)
 
 其他简单类型—— long  、 double  、 date  等等——也接受 index  参数，但相应的值只能是 no  和 not_analyzed  ，它们
 的值不能被分析。
@@ -507,7 +507,9 @@ curl 'http://localhost:9200/_analyze?analyzer=standard&pretty' -d '我是一个�
 
 在elasticsearch-analysis-ik-2.x目录下，修改pom.xml中的`elasticsearch.version`为2.4.4, 执行
 
-`mvn clean package -DskipTests`
+```
+mvn clean package -DskipTests
+```
 
 等待maven打包完成，构建成功后，你可以看到有一个：`target/releases/elasticsearch-analysis-ik-1.10.5.zip`
 

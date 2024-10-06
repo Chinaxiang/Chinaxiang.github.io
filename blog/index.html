@@ -72,7 +72,7 @@ title: 博客列表
                 {% if page == paginator.page %}
                   <li class="active"><a href="javascript:;">{{ page }}</a></li>
                 {% elsif page == 1 %}
-                  <li><a href="{{ "/blog" }}">1</a></li>
+                  <li><a href="{{ '/blog' }}">1</a></li>
                 {% else %}
                   <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
                 {% endif %}

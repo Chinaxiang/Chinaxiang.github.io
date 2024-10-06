@@ -147,7 +147,6 @@ network.host: 0.0.0.0
 ...
 ```
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170926171735.png)
 
 ## 集群和节点
 
@@ -262,7 +261,6 @@ curl 'http://localhost:9200/_cluster/health?pretty'
 
 两台机器，运行了三个节点的空集群就准备就绪了。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170926183651.png)
 
 `elasticsearch.yml` 中还可以配置数据的存储目录，日志的存储目录，插件的存储目录，就不再赘述了。
 
@@ -296,11 +294,9 @@ bin/elasticsearch
 
 浏览器访问：`http://192.168.163.128:9200/_plugin/head/`
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927100534.png)
 
 大家会发现只有一个`node-master`节点，因为我把master的两个实例都关了，现在的es master是slave1, 而master的节点没有配置单播通知host, 所以master就是一个节点的集群。配置一下，再次启动。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927101321.png)
 
 带有星号的是es master节点。
 

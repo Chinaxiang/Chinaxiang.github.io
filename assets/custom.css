@@ -3,38 +3,46 @@
     margin: 10px 0 25px 0;
     border-bottom: 1px dotted #e4e9f0;
 }
+
+.headline h3, .headline h4 {
+  color: #dadada;
+  margin: 0 0 -2px 0;
+  padding-right: 10px;
+  display: inline-block;
+  text-shadow: 0 0 1px #f6f6f6;
+  border-bottom: 2px solid #3498db;
+}
+
 .footer {
     margin-top: 40px;
     padding: 1px;
     background: #585f69;
     color: #dadada;
 }
+
 .footer p {
 	text-align: justify;
 }
-.headline h3, .headline h4 {
-    color: #dadada;
-    margin: 0 0 -2px 0;
-    padding-right: 10px;
-    display: inline-block;
-    text-shadow: 0 0 1px #f6f6f6;
-    border-bottom: 2px solid #3498db;
-}
+
 .footer h4, .footer h3 {
     color: #e4e4e4;
     background: none;
     text-shadow: none;
 }
+
 .social-media-list li {
 	display: inline;
 }
+
 .social-media-list a {
 	font-size: 2em;
 	color: #3e4753;
 }
+
 .social-media-list a:hover {
 	color: #e4e4e4;
 }
+
 .copyright {
 	color: #e4e4e4;
     font-size: 12px;
@@ -42,12 +50,15 @@
     background: #3e4753;
     border-top: solid 1px #777;
 }
+
 .copyright a {
 	color: #e4e4e4;
 }
+
 .copyright a:hover {
 	color: #e4e4e4;
 }
+
 .ans .ant {
     max-width: 370px;
     margin: 0 auto;
@@ -57,42 +68,55 @@
 .stream-list {
   margin-bottom:10px;
 }
+
 .stream-list__item {
   margin:0;
   border-bottom:1px solid #eee;
   padding:10px 0;
 }
+
 .stream-list__item .author {
   margin-bottom:5px;
   color:#999;
   font-size:13px;
 }
+
 .stream-list__item .author a {
   color:#999;
 }
+
 .stream-list__item .title {
   display:inline;
   margin:0 5px 0 0;
   /*font-size:16px;*/
 }
+
 .stream-list__item .title a {
   color:#333;
 }
+
 .stream-list__item .title a:hover {
-  color:#017e66;
+  color:#3a6ad1;
 }
+
 .stream-list__item .summary {
   overflow:auto;
   overflow-x:hidden;
 }
+
 .stream-list__item .excerpt {
   margin:5px 0 0;
-  height:42px;
+  /* height:42px; */
   color:#777;
   font-size:13px;
   line-height:1.6;
   overflow:hidden;
 }
+
+.stream-list__item .excerpt img {
+  max-height: 250px;
+}
+
 .blog-rank {
   line-height:1.2;
   float:left;
@@ -103,10 +127,12 @@
   font-size:16px;
   color:#666;
 }
+
 .blog-rank small {
   display:block;
   font-size:12px;
 }
+
 .blog-rank .views,.blog-rank .votes {
   display:block;
   padding-top:3px;
@@ -116,39 +142,50 @@
   -webkit-border-radius:1px;
   border-radius:1px;
 }
+
 .blog-rank .votes {
   margin-bottom:8px;
   background:#f0f0f0;
 }
+
 .blog-rank .plus {
-  background:#009a61;
+  background:#337ab7;
   color:#fff;
 }
+
 .blog-rank .views {
   color:#999;
 }
+
 .blog-stream .stream-list__item {
   padding:12px 0;
 }
+
 .blog-stream .stream-list__item .author {
   margin-top:5px;
 }
+
 .blog-stream .stream-list__item .author a {
-  color:#009a61;
+  color:#337ab7;
 }
+
+
 /*博客详情页*/
 .wrap {
   padding:15px 0;
   background:#eee;
 }
+
 .wrap .title a, .wrap .title a:active, .wrap .title a:hover {
   color: #333;
   text-decoration: none;
 }
+
 .wrap .author {
   color: #999;
   padding-top: 10px;
 }
+
 .breadcrumb {
   padding: 0;
   margin-bottom: 10px;
@@ -156,53 +193,74 @@
   background-color: #eee;
   border-radius: 4px;
 }
+
 .list-unstyled {
   padding-left: 0;
   list-style: none;
 }
+
 .wrap .widget-action--ver {
   margin-top: 10px;
 }
+
 .widget-action--ver {
   color:#999
 }
+
 .widget-action--ver li {
   margin-top:12px
 }
+
 .widget-action--ver li:first-child {
   margin-top:0
 }
+
 .widget-action--ver button {
   margin-right:8px;
   min-width:58px
 }
+
 .widget-action--ver strong {
   color:#333
 }
+
+.article {
+  font-family: PingfangSC-LIGHT,sans-serif,"Helvetica Neue", Helvetica, sans-serif;
+  line-height: 2.4;
+}
+
 .article img {
   max-width: 100%;
+  margin: 0 auto;
 }
+
 .article ul, .article ol {
   padding-left: 20px;
 }
+
 /*博客代码部分*/
 .highlight {
   overflow: auto;
 }
+
 .article pre {
   padding: 0px;
 }
+
+/* 博客剪贴板 */
 .clipboard {
   position: relative;
   display: none;
 }
+
 .btn-clipboard {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
+  text-align: center;
   display: block;
-  padding: 5px 8px;
+  padding: 1px 5px;
   font-size: 12px;
   color: #767676;
   cursor: pointer;
@@ -213,8 +271,8 @@
 
 .btn-clipboard:hover {
   color: #fff;
-  background-color: #563d7c;
-  border-color: #563d7c;
+  background-color: #5a5bb8;
+  border-color: #5a5bb8;
 }
 
 @media (min-width:768px) {
@@ -229,17 +287,20 @@
 .panel-default {
   border-color:#ddd
 }
+
 .panel-default>.panel-heading {
   color:#333;
   background-color:#f5f5f5;
   border-color:#ddd
 }
+
 .widget-outline {
   margin:0;
   top:40px;
   border-color:#ddd;
   line-height:1.5
 }
+
 .widget-outline .panel-heading {
   background-color:#FFF;
   font-weight:700;
@@ -248,19 +309,23 @@
   padding:8px 12px;
   font-size:16px
 }
+
 .widget-outline .panel-body {
   max-height:300px;
   overflow:auto;
   padding:0 12px 10px
 }
+
 .widget-outline .panel-body #articleIndex {
   margin-top:5px
 }
+
 .widget-outline .panel-body ul {
   padding-left:12px;
   margin:0;
   list-style-type:none
 }
+
 .widget-outline {
   position: relative;
   top: 0;
@@ -269,19 +334,24 @@
   -webkit-box-shadow: 0 0 0 #fff;
   box-shadow: 0 0 0 #fff
 }
+
 .widget-outline .panel-heading {
   cursor: initial
 }
+
+/* 博客详情右侧目录栏 */
 .post-nav {
   display: none;
   padding: 10px 0 10px 10px;
   background: #fff
 }
+
 .post-nav.side-outline {
   padding-left: 0;
   width: 100%;
   top: 0
 }
+
 .post-nav.side-outline .nav-body:after {
   content: '';
   display: block;
@@ -293,6 +363,7 @@
   border-radius: 5px;
   left: 0
 }
+
 .post-nav.side-outline .highlight-title {
   position: absolute;
   display: block;
@@ -300,16 +371,18 @@
   right: 0;
   background: #f3f3f3;
   z-index: 1;
-  border-left: 3px solid #009A61;
+  border-left: 3px solid #337ab7;
   -moz-transition: all .2s ease;
   -o-transition: all .2s ease;
   -webkit-transition: all .2s ease;
   transition: all .2s ease
 }
+
 .post-nav .articleIndex,.post-nav .panel-body {
   z-index: 2;
   position: relative
 }
+
 .post-nav .panel-body {
   overflow: hidden;
   max-height: inherit;
@@ -319,24 +392,30 @@
   -webkit-transition: all .2s ease;
   transition: all .2s ease
 }
+
 .post-nav .nav-body {
   position: relative;
   padding: 0 12px
 }
+
 .post-nav .articleIndex li a {
   display: block;
   padding: 3px 0
 }
+
 .post-nav .articleIndex li.active a {
   color: #000
 }
+
 .post-nav.fixed {
   position: fixed;
   top: 0
 }
+
 .post-nav.absolute {
   position: absolute
 }
+
 .hljs {
   padding: 0;
   background: none;

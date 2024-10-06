@@ -32,7 +32,9 @@ X市有一个牛逼的中学M, 今年有3600个考生考入了M, 我们不可能
 
 事实上，它根据一个简单的算法（和分班策略类似）决定：
 
-`shard = hash(routing) % number_of_primary_shards`
+```
+shard = hash(routing) % number_of_primary_shards
+```
 
 routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义。这个 routing  字符串通过哈希函数生成一个数字，然后除以
 主切片的数量得到一个余数(remainder)，余数的范围永远是 `0`  到 `number_of_primary_shards - 1`  ，这个数字就是特定文档所
@@ -48,7 +50,7 @@ routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义
 假设有三个节点的集群，它包含一个索引并拥有两个主分片，每个主分片有两个复制分
 片，它的集群分布应该类似这样：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927175816.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170927175816.png)
 
 记住一点：相同的分片不会放在同一个节点上。所谓的相同指存储了同样数据的分片。
 
@@ -61,12 +63,12 @@ routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义
 
 新建、索引和删除请求都是写(write)操作，它们必须在主分片上成功完成才能复制到相关的复制分片上。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170928151633.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170928151633.png)
 
 1. 客户端给 `Node 1`  发送新建、索引或删除请求。
 2. 节点使用文档的 `_id`  确定文档属于分片 0  。它转发请求到 `Node 3`  ，分片 0  位于这个节点上。
 3. `Node 3`  在主分片上执行请求，如果成功，它转发请求到相应的位于 `Node 1`  和 `Node 2`  的复制节点上。当所有的复制节点
-报告成功， `Node 3`  报告成功到请求的节点，请求的节点再报告给客户端。
+   报告成功， `Node 3`  报告成功到请求的节点，请求的节点再报告给客户端。
 
 客户端接收到成功响应的时候，文档的修改已经被应用于主分片和所有的复制分片。你的修改生效了。
 
@@ -74,7 +76,7 @@ routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义
 
 文档能够从主分片或任意一个复制分片被检索。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170928152838.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170928152838.png)
 
 1. 客户端给 `Node 1`  发送get请求。
 2. 节点使用文档的 `_id`  确定文档属于分片 0  。分片 0  对应的复制分片在三个节点上都有。此时，它转发请求到 `Node 2`  。
@@ -94,11 +96,11 @@ routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义
 
 例如原来有一个索引三个分片，一套副本，两个节点。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927181746.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170927181746.png)
 
 现在增加了一个节点：
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927181858.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170927181858.png)
 
 注意：由于索引的主分片是固定的，横向扩展增容能力也是有上限的，三个分片，我们最多让每个分片占据一个节点，能够存储数据的最大值取决于三个节点的存储之和，不过我们可以纵向扩展。
 
@@ -118,7 +120,7 @@ routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义
 
 另外，读请求——搜索和文档检索——能够通过主分片或者复制分片处理，所以数据的冗余越多，我们能处理的搜索吞吐量就越大。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927183135.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170927183135.png)
 
 索引现在有9个分片：三个主分片和6个复制分片。这意味着我们最多能够扩展到9个节点，再次的变成每个节点一个分片。这样使我们的搜索性能相比标准的三节点集群扩展三倍。
 
@@ -128,7 +130,7 @@ routing  值是一个任意字符串，它默认是 `_id`  但也可以自定义
 
 Elasticsearch可以应对节点失效。对于3个节点，3个主分片，6个副分片的一个索引，如果我们杀掉第一个节点。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927183749.png)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/screenshot_20170927183749.png)
 
 我们杀掉的节点是一个主节点。必须有一个主节点来让集群的功能可用，所以发生的第一件事就是各节点选举了一个新的主
 节点： Node 2  。

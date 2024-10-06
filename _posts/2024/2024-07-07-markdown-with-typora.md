@@ -66,13 +66,15 @@ https://github.com/Molunerfinn/PicGo
 
 ![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/c541b34c-aeb9-4dcc-a458-7fd6a7430350.png)
 
-<br/>
 
-<br/>
+---
 
 
 好了，今天的分享到此结束，希望对你有所帮助。
 
 如果你对我分享的内容感兴趣，欢迎扫码关注公众号：**新质程序猿**，并设置星标，公众号的内容会更实时哟，也更容易接收推送提醒。
 
-![](https://huangyanxiang.com/qrcode.jpg)
+
+<p class="text-center">
+<img src="https://huangyanxiang.com/qrcode.jpg">
+</p>

@@ -12,6 +12,7 @@
   *width: 100%;
   font-size: 16px;
   font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+  /* font-family: PingfangSC-LIGHT,sans-serif,"Helvetica Neue", Helvetica, sans-serif; */
 }
 /* docs overrides */
 .a {
@@ -24,6 +25,13 @@
 /* general overrides */
 .by {
   position: relative;
+}
+.ow {
+  margin: 7px 15px 0;
+}
+.pc {
+  background-color: #0a0331;
+  border-color: #120b3a;
 }
 .b .c {
   line-height: 1.4;

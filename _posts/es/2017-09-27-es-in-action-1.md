@@ -101,7 +101,6 @@ Elasticsearch中每个文档都有版本号，每当文档变化（包括删除�
 
 通过head插件查看集群状态。
 
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927122809.png)
 
 5个主分片和5个副分片均匀的分布在两台机器上。
 
@@ -228,9 +227,7 @@ yellow open   blog2   2   2          0            0       520b           260b
 
 blog2索引2个主分片，2份副本，之所以health是yellow(亚健康)，是因为我只有两个实例，一个实例放一份数据，还有一份副本没有可用的实例去分配，直到当另外一个节点加入到这个集群后才能分配。一旦那份复制在第三个节点上被分配，这个索引的健康状态就会变成绿色。
 
-通过head查看更明了：
-
-![](http://qcdn.huangyanxiang.com/blog/screenshot_20170927135419.png)
+通过head查看更明了
 
 ### 索引配置
 
