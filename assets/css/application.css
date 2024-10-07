@@ -112,13 +112,13 @@ a:focus {
 }
 
 .bw {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-bottom: 30px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  margin-bottom: 26px;
   font-size: 20px;
   color: #111;
-  background-color: #3097d1;
-  background-image: linear-gradient(to bottom, #ccc, #eee);
+  background-color: #e4e3ed;
+  background-image: linear-gradient(to bottom, #e4e3ed, #eee);
 }
 .bw h1 {
   margin-bottom: 5px;

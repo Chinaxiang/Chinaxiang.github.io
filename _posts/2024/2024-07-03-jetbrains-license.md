@@ -2,8 +2,10 @@
 layout: post
 title:  JetBrains 全家桶畅享
 date:   2024-07-03 10:28:26 +0800
-tags: tool jetbrains goland idea pycharm phpstorm
+tags: tool jetbrains goland idea pycharm phpstorm webstorm
 ---
+
+![](https://raw.githubusercontent.com/Chinaxiang/notepic/main/2024/20241005214150.png)
 
 作为一名程序员（不是程序员的不用往下看了哈），怎么能没用过 `JetBrains` 全家桶呢？
 
@@ -17,7 +19,7 @@ tags: tool jetbrains goland idea pycharm phpstorm
 - python
 - web
 
-![](https://raw.githubusercontent.com/Chinaxiang/notepic/main/2024/20241005214150.png)
+
 
 其实我一般不追求太新的版本，至今JDK还停留在JDK1.8,莫嘲笑，够用就好。
 
@@ -93,9 +95,5 @@ tags: tool jetbrains goland idea pycharm phpstorm
 
 ![](https://raw.githubusercontent.com/Chinaxiang/notepic/main/2024/5606ea39-d808-4e81-86e5-79e4e095f6d6.png)
 
-好了，今天的分享到此结束，希望对你有所帮助。
 
-如果你对我分享的内容感兴趣，欢迎关注公众号：新质程序猿，并设置星标（公众号不设置星标会收不到推送），公众号的内容会更实时哟，也更容易接收推送提醒。
-
-![](https://huangyanxiang.com/qrcode.jpg)
 

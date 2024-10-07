@@ -173,7 +173,8 @@
 /*博客详情页*/
 .wrap {
   padding:15px 0;
-  background:#eee;
+  background: #e4e3ed;
+  background-image: linear-gradient(to bottom, #e4e3ed, #eee);
 }
 
 .wrap .title a, .wrap .title a:active, .wrap .title a:hover {
@@ -190,7 +191,7 @@
   padding: 0;
   margin-bottom: 10px;
   list-style: none;
-  background-color: #eee;
+  background-color: #e4e3ed;
   border-radius: 4px;
 }
 

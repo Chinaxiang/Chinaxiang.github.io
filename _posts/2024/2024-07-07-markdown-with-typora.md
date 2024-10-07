@@ -5,7 +5,7 @@ date:   2024-07-07 08:08:08 +0800
 tags: tool markdown typora picgo
 ---
 
-![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/93e3cda1-e696-4251-bef1-be81c44e251b.jpeg)
+![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/5565b684-640d-4025-b77a-4ce5cb0d7156.png)
 
 作为技术人，如果你不会写 Markdown 真的需要好好反省一下，我媳妇（研发转测试了）已经被我喷了好几次了，哈哈哈，**键盘已经跪坏好几个了**。
 
@@ -67,14 +67,3 @@ https://github.com/Molunerfinn/PicGo
 ![](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/c541b34c-aeb9-4dcc-a458-7fd6a7430350.png)
 
 
----
-
-
-好了，今天的分享到此结束，希望对你有所帮助。
-
-如果你对我分享的内容感兴趣，欢迎扫码关注公众号：**新质程序猿**，并设置星标，公众号的内容会更实时哟，也更容易接收推送提醒。
-
-
-<p class="text-center">
-<img src="https://huangyanxiang.com/qrcode.jpg">
-</p>

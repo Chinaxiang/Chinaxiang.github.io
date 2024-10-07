@@ -11,17 +11,17 @@ permalink: /tag/jekyll
 </div>
 <div class="by alx">
   <div class="row">
-    <div class="col-md-9 col-sm-8">
+    <div class="col-md-9 col-sm-12">
       <div class="stream-list blog-stream">
         {% assign posts = site.tags.jekyll | sort: 'date' | reverse %}
         {% for post in posts %}
         <section class="stream-list__item">
           <div class="blog-rank">
             <div class="votes plus">
-              10<small>推荐</small>
+              99+<small>推荐</small>
             </div>
             <div class="views hidden-xs">
-              100<small>浏览</small>
+              10w+<small>浏览</small>
             </div>
           </div>
           <div class="summary">
@@ -35,7 +35,7 @@ permalink: /tag/jekyll
         {% endfor %}
       </div>
     </div>
-    <div class="col-md-3 col-sm-4">
+    <div class="col-md-3 hidden-sm hidden-xs">
       {% include segment.html %}
     </div>
     <div class="clearfix"></div>
