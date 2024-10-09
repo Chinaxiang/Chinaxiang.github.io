@@ -2,7 +2,7 @@
 layout: post
 title:  PicGo 配置 GitHub 作为后端免费图床
 date:   2024-10-08 23:28:26 +0800
-tags: github picgo
+tags: github picgo tool
 ---
 
 ![image-20241008221513799](https://bytesops.oss-cn-hangzhou.aliyuncs.com/picgo/image-20241008221513799.png)
