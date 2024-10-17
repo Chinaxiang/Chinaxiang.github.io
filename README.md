@@ -54,6 +54,7 @@ Jekyll 需要 Ruby 环境。
 以下内容是安装完了 ruby 和 jekyll 之后执行的指令：
 
 ```shell
+rbenv init
 bundle exec jekyll serve
 # => Now browse to http://localhost:4000
 ```
